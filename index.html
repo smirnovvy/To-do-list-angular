@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="toDoList">
+<head>
+    <meta charset="UTF-8">
+    <title>To-do list</title>
+    <link rel="stylesheet" type="text/css" href="common.css">
+</head>
+<body ng-controller="ctrl">
+    <div class="header">
+        <h1>To-do List</h1>
+        <form>
+            <input class="header__input" type="text" ng-model="input" placeholder="Write down task...">
+            <button class="header__button   " ng-click="addTask()">Add task</button>
+        </form>
+    </div>
+        <div>
+        <ul>
+            <li ng-repeat="task in tasksArray">{{ task }} <button class="delete" ng-click="deleteItem(task)">X</button></li>
+        </ul>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
